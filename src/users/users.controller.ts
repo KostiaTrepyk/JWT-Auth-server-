@@ -31,7 +31,7 @@ export class UsersController {
   @ApiUnauthorizedResponse({ description: 'Unauthorized.' })
   /* Logic */
   @AuthGuard('MODERATOR')
-  @Get('getAll')
+  @Get()
   async getAll(@Query() query: { page: number; limit: number }) {
     const res = await this.usersService.getAllRoute(query.page, query.limit);
     throw new HttpException(res, HttpStatus.OK);

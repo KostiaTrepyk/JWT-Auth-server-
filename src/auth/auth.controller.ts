@@ -4,6 +4,7 @@ import {
   HttpException,
   HttpStatus,
   Post,
+  Get,
   UseGuards,
   Request,
 } from '@nestjs/common';
@@ -60,7 +61,7 @@ export class AuthController {
   @ApiUnauthorizedResponse({ description: 'Unauthorized.' })
   /* Logic */
   @UseGuards(JwtAuthGuard)
-  @Post('checkToken')
+  @Get('checkToken')
   async checkToken(@Request() req): Promise<void> {
     throw new HttpException(req.user, HttpStatus.OK);
   }
