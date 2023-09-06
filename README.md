@@ -1,3 +1,6 @@
+## Techs
+- NestJS
+
 ## Installation
 
 ```bash
